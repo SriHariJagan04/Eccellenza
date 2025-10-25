@@ -235,26 +235,37 @@
 }
 
 /* Staggered animation */
-.mobileMenu.open .mobileNavLink:nth-child(2) {
-  transition-delay: 0.1s;
+.mobileMenu.open .mobileNavLink:nth-child(1) {
+  transition-delay: 0s;
   opacity: 1;
   transform: translateX(0);
 }
-.mobileMenu.open .mobileNavLink:nth-child(3) {
+.mobileMenu.open .mobileNavLink:nth-child(2) {
   transition-delay: 0.2s;
   opacity: 1;
   transform: translateX(0);
 }
-.mobileMenu.open .mobileNavLink:nth-child(4) {
-  transition-delay: 0.3s;
-  opacity: 1;
-  transform: translateX(0);
-}
-.mobileMenu.open .mobileNavLink:nth-child(5) {
+.mobileMenu.open .mobileNavLink:nth-child(3) {
   transition-delay: 0.4s;
   opacity: 1;
   transform: translateX(0);
 }
+.mobileMenu.open .mobileNavLink:nth-child(4) {
+  transition-delay: 0.6s;
+  opacity: 1;
+  transform: translateX(0);
+}
+.mobileMenu.open .mobileNavLink:nth-child(5) {
+  transition-delay: 0.8s;
+  opacity: 1;
+  transform: translateX(0);
+}
+.mobileMenu.open .mobileNavLink:nth-child(6) {
+  transition-delay: 1s;
+  opacity: 1;
+  transform: translateX(0);
+}
+
 
 /* Hover effect */
 .mobileNavLink:hover {
