@@ -1,6 +1,17 @@
 import React, { useState, useContext, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Sun, Moon, Home, Info, Phone, Briefcase } from "lucide-react";
+import {
+  Menu,
+  X,
+  Sun,
+  Moon,
+  Home,
+  Info,
+  Phone,
+  Briefcase,
+  Image,
+  FolderKanban,
+} from "lucide-react";
 import styles from "./navbar.module.css";
 import { ThemeContext } from "../../Store/useContext";
 
@@ -11,15 +22,18 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const navRefs = useRef([]);
 
+
   const navItems = [
     { path: "/", label: "Home", icon: <Home size={18} /> },
     { path: "/about", label: "About", icon: <Info size={18} /> },
     { path: "/services", label: "Services", icon: <Briefcase size={18} /> },
+    { path: "/projects", label: "Projects", icon: <FolderKanban size={18} /> }, // 🏗️ New Projects Page
+    { path: "/gallery", label: "Gallery", icon: <Image size={18} /> }, // 🖼️ New Gallery Page
     { path: "/contact", label: "Contact", icon: <Phone size={18} /> },
   ];
 
   useEffect(() => {
-    const index = navItems.findIndex(item => item.path === location.pathname);
+    const index = navItems.findIndex((item) => item.path === location.pathname);
     setActiveIndex(index !== -1 ? index : 0);
     setMenuOpen(false); // close mobile menu on route change
   }, [location.pathname]);
@@ -30,7 +44,11 @@ const Navbar = () => {
         {/* Logo */}
         <div className={styles.logo}>
           <Link to="/" className={styles.logoLink}>
-            <img src="/Images/logo1.png" alt="Logo" className={styles.logoImage} />
+            <img
+              src="/Images/logo1.png"
+              alt="Logo"
+              className={styles.logoImage}
+            />
           </Link>
         </div>
 
@@ -40,7 +58,7 @@ const Navbar = () => {
             <Link
               key={index}
               to={item.path}
-              ref={el => (navRefs.current[index] = el)}
+              ref={(el) => (navRefs.current[index] = el)}
               className={styles.navLink}
             >
               {item.icon} {item.label}
@@ -53,7 +71,7 @@ const Navbar = () => {
               className={styles.navIndicator}
               style={{
                 width: navRefs.current[activeIndex].offsetWidth,
-                transform: `translateX(${navRefs.current[activeIndex].offsetLeft}px)`
+                transform: `translateX(${navRefs.current[activeIndex].offsetLeft}px)`,
               }}
             ></span>
           )}
