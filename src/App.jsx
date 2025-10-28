@@ -4,6 +4,9 @@ import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Pages/Footer/Footer";
 import Contact from "./Pages/Contact/Contact";
 import ScrollToTop from "./Utils/ScrollToTop";
+import Gallery from "./Pages/Gallery/Gallery";
+import Portfolio from "./Pages/Portfolio/Portfoilo";
+import Services from "./Pages/Services/Services";
 
 const App = () => {
   return (
@@ -13,6 +16,9 @@ const App = () => {
       <div className="mainContent">
         <Routes>
           <Route path="/contact" element={<Contact />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/projects" element={<Portfolio />} />
+          <Route path="/services" element={<Services />} />
           {/* other routes */}
         </Routes>
         <Footer />

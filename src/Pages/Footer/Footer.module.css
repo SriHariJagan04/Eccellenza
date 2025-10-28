@@ -273,13 +273,12 @@
   .offices {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 0.6rem;
   }
 
   .offices p {
-    flex-direction: row;
-    justify-content: center;
   }
 
   .column ul li {
@@ -302,5 +301,23 @@
   .offices h4::after {
     margin-left: auto;
     margin-right: auto;
+  }
+
+
+  .column ul li svg, .offices p svg {
+    display: none; /* hide all icons */
+  }
+
+  /* Optional: adjust spacing after removing icons */
+  .column ul li {
+    justify-content: center; /* center the text */
+    gap: 0; /* remove the gap left by icons */
+  }
+
+  /* Make links full width and stacked nicely */
+  .column ul li a {
+    display: block;
+    width: 100%;
+    text-align: center;
   }
 }

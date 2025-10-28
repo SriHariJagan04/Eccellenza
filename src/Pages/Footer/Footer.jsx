@@ -103,7 +103,7 @@ const Footer = () => {
         {/* Useful Links */}
         <div className={styles.column}>
           <h3>Useful Links</h3>
-          <ul>
+          <ul className={styles.usefulLinks}>
             <li>
               <ChevronRight /> <a href="/">Home</a>
             </li>
